@@ -1,0 +1,11 @@
+<launch>
+<arg name="ns" default="iris"/>
+
+<include file="$(find theatre_uav_gazebo)/launch/gazebo_iris_empty_world.launch">
+	<arg name="ns" value="$(arg ns)"/>
+</include>
+<include file="$(find theatre_uav_gazebo)/launch/mavros_sitl.launch">
+	<arg name="ns" value="$(arg ns)"/>
+</include>
+
+</launch>

@@ -1,0 +1,15 @@
+<launch>
+   
+   <arg name="camera_altitude" default="2.0"/>
+   
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="camera_description"
+	 command="$(find xacro)/xacro.py '$(find theatre_uav_gazebo)/urdf/camera.xacro'" />
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -x 0.0 -y 0.0 -z $(arg camera_altitude) -P 1.570796327 -Y 1.570796327 -model ir_camera -param camera_description"/>
+
+  <node pkg="tf" type="static_transform_publisher" name="camera_to_world" args="0 0 $(arg camera_altitude) 0 0 3.1415926535897931 world camera_link 30" />
+
+</launch>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- Revolute-Revolute Manipulator -->
+<robot name="ir_config" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <xacro:include filename="$(find theatre_uav_gazebo)/urdf/ir_beacon_config.gazebo" />
+ 
+  <joint name="fixed" type="continuous">
+    <origin xyz="0 0 0.05" rpy="0 0 0" />
+    <parent link="base_link"/>
+    <child link="ir_config_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+  <!-- Base Link -->
+  <link name="ir_config_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://theatre_uav_description/meshes/ir_config_norm.stl"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0 0 0" /> <!-- [m] [m] [m] -->
+        </geometry>
+      </collision>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.00001"/>
+      <inertia
+	  ixx="0.00001" ixy="0.0" ixz="0.0"
+	  iyy="0.00001" iyz="0.0"
+	  izz="0.00001"/>
+    </inertial>
+  </link>
+
+
+</robot>

@@ -1,0 +1,17 @@
+# Telem 2
+
+mavlink start -d /dev/ttyS2 -b 230400
+usleep 100000
+mavlink stream -d /dev/ttyS2 -s HEARTBEAT -r 5
+usleep 100000
+mavlink stream -d /dev/ttyS2 -s HIGHRES_IMU -r 100
+usleep 100000
+mavlink stream -d /dev/ttyS2 -s LOCAL_POSITION_NED -r 20
+usleep 100000
+mavlink stream -d /dev/ttyS2 -s POSITION_TARGET_LOCAL_NED -r 10
+usleep 100000
+mavlink stream -d /dev/ttyS2 -s SYS_STATUS -r 10
+usleep 100000
+mavlink stream -d /dev/ttyS2 -s COMMAND_LONG -r 10
+usleep 100000
+

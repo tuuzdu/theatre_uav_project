@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 2.4.6)
+    if(COMMAND cmake_policy)
+      cmake_policy(SET CMP0003 NEW)
+    endif(COMMAND cmake_policy)
+
+project(monocular_pose_estimator_lib)
+
+set(CMAKE_CXX_FLAGS "-O3")
+
+find_package(catkin REQUIRED COMPONENTS cmake_modules)
+find_package(Eigen REQUIRED)
+find_package(OpenCV 3.0 EXACT REQUIRED)
+
+catkin_package(
+  INCLUDE_DIRS include
+  DEPENDS eigen opencv
+  LIBRARIES ${PROJECT_NAME}
+)
+
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+  ${EIGEN_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
+)
+
+file(GLOB SOURCEFILES "src/*.cpp")
+
+add_library( ${PROJECT_NAME} SHARED ${SOURCEFILES})
+add_dependencies( ${PROJECT_NAME} SHARED ${catkin_EXPORTED_TARGETS} ) 
+target_link_libraries( ${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBS})

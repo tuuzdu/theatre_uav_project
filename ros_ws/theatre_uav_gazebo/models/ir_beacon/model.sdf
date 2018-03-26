@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name="ir_beacon">
+	<pose>0 0 0 0 0 0</pose>
+    <link name='ir_beacon'>
+	  <pose>0 0 0 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <sphere>
+            <radius>0.01</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name='beacon'>
+		<material>
+			<ambient>1 0 0 1</ambient>
+			<emissive>1 0 0 1</emissive>
+			<diffuse>1 0 0 1</diffuse>
+		</material>   
+	    <geometry>
+          	<sphere>
+            		<radius>0.008</radius>
+          	</sphere>
+        </geometry>
+      </visual>
+
+	</link>
+  </model>
+</sdf>
+

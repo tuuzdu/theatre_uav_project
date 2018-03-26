@@ -1,0 +1,34 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name="ir_beacon_test_config">
+	<static>true</static>
+	<pose>0 0 0 0 0 0</pose>
+    <link name='ir_beacon_main'>
+	  <pose>0 0 0 0 0 0</pose>
+    </link>
+
+	<include>
+		<name>ir_beacon_1</name>
+		<uri>model://ir_beacon</uri>
+		<pose>-0.045 0.049 0.0 0 0 0</pose>
+	</include>
+	<include>
+		<name>ir_beacon_2</name>
+		<uri>model://ir_beacon</uri>
+		<pose>-0.045 -0.057 0.0 0 0 0</pose>
+	</include>
+	<include>
+		<name>ir_beacon_3</name>
+		<uri>model://ir_beacon</uri>
+		<pose>0.052 -0.0105 0.042 0 0 0</pose>
+	</include>
+	<include>
+		<name>ir_beacon_4</name>
+		<uri>model://ir_beacon</uri>
+		<pose>0.042 0.029 0.022 0 0 0</pose>
+	</include>
+
+
+  </model>
+</sdf>
+

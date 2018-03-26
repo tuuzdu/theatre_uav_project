@@ -1,0 +1,8 @@
+
+<launch>
+	<include file="$(find monocular_pose_estimator)/launch/usb_ps3eye.launch"/>
+	<include file="$(find monocular_pose_estimator)/launch/f450_ps3eye.launch"/>
+	<include file="$(find theatre_uav_description)/launch/tf_pose.launch"/>
+	<include file="$(find theatre_uav_description)/launch/ekf_f450.launch"/>
+   
+</launch>

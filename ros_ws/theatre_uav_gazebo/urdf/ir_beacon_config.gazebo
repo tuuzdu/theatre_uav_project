@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot>
+
+  <gazebo reference="ir_config_link">
+
+<visual name='beacon'>
+		<material>
+			<ambient>1 0 0 1</ambient>
+			<emissive>1 0 0 1</emissive>
+			<diffuse>1 0 0 1</diffuse>
+		</material>
+</visual> 
+
+  </gazebo>
+
+</robot>
